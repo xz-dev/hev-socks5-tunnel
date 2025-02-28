@@ -184,6 +184,7 @@ jobs:
             tcpdump -i tun_3000 -nv &
             TCPDUMP_PID=$!
             sleep 1
+            ifconfig
             curl --interface tun_3000 -i http://1.1.1.1
             CURL_EXIT_CODE=$?
             kill $TUNNEL_PID
